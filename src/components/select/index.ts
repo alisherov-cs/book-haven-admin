@@ -1,1 +1,2 @@
-export { CategoriesSelect } from "./categoriesSelect";
+export { GanersSelect } from "./ganersSelect";
+export { AuthorsSelect } from "./authorsSelect";

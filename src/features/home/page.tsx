@@ -1,20 +1,27 @@
-import { useState } from "react";
-import { Child } from "./components";
+import { useEffect } from "react";
+import { useBreadcrumb } from "@/store/breadcrumbStore/context";
+import { usePageHeader } from "@/store";
+import { useGetProfile } from "../auth/guard/api/profile.request";
 
-export const Home = () => {
-  const [state, setState] = useState(false);
-  const [prop, setProp] = useState<string | null>(null);
+export default function Home() {
+    const { setRoutes } = useBreadcrumb();
+    const { setTitle, setActions } = usePageHeader();
+    const { data: user } = useGetProfile();
 
-  console.log("parent");
+    useEffect(() => {
+        setRoutes([]);
+    }, []);
 
-  return (
-    <div>
-      <h1>home: {JSON.stringify(state)}</h1>
-      <Child prop={prop} />
-      <button onClick={() => setState((prev) => !prev)}>toggle</button>
-      <button onClick={() => setProp(JSON.stringify(Math.random()))}>
-        toggle child
-      </button>
-    </div>
-  );
-};
+    useEffect(() => {
+        setTitle(null);
+        setActions(null);
+    }, []);
+
+    return (
+        <div className="flex items-center justify-center h-full">
+            <h1 className="text-4xl text-violet-500">
+                Welcome! <span className="text-red-500">{user?.username}</span>
+            </h1>
+        </div>
+    );
+}

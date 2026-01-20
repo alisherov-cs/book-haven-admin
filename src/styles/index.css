@@ -1,44 +1,57 @@
 @import "tailwindcss";
 
 @theme {
-  --color-base: var(--color-bg-container);
-  --color-layout: var(--color-bg-layout);
-  --color-primary: var(--color-text);
-  --color-border: var(--color-border);
+    --color-base: var(--color-bg-container);
+    --color-layout: var(--color-bg-layout);
+    --color-primary: var(--color-text);
+    --color-border: var(--color-border);
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
-  background-color: var(--color-bg-layout);
+    width: 6px;
+    background-color: var(--color-bg-layout);
 }
 
 ::-webkit-scrollbar-thumb {
-  width: 100%;
-  background-color: var(--color-border);
-  border-radius: 12px;
+    width: 100%;
+    background-color: var(--color-border);
+    border-radius: 12px;
 }
 
 .ant-drawer-content-wrapper {
-  @apply m-4! rounded-2xl!;
+    @apply m-4! rounded-2xl!;
 }
 
 .ant-drawer-content {
-  @apply rounded-2xl! border!;
-  border-color: var(--color-border);
+    @apply rounded-2xl! border!;
+    border-color: var(--color-border);
 }
 
 .ant-drawer-header .ant-drawer-header-title {
-  @apply flex! justify-between!;
+    @apply flex! justify-between!;
 }
 
 .ant-drawer-header .ant-drawer-title {
-  @apply flex-initial! text-lg;
+    @apply flex-initial! text-lg;
 }
 
 .ant-drawer-footer {
-  @apply border-0!;
+    @apply border-0!;
 }
 
 .ant-drawer-close {
-  @apply border! rounded-full! w-8! h-8!;
+    @apply border! rounded-full! w-8! h-8!;
+}
+
+.ant-form-item-row {
+    display: block !important;
+}
+
+.ant-form-item-label {
+    text-align: start !important;
+}
+
+.ant-upload-wrapper,
+.ant-upload {
+    @apply w-full! block!;
 }

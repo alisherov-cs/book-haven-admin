@@ -10,11 +10,11 @@ import { Providers } from "@/providers";
 const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <Providers>
-        <RouterProvider router={router} />
-      </Providers>
-    </QueryClientProvider>
-  </StrictMode>
+    <StrictMode>
+        <QueryClientProvider client={queryClient}>
+            <Providers>
+                <RouterProvider router={router} />
+            </Providers>
+        </QueryClientProvider>
+    </StrictMode>
 );
