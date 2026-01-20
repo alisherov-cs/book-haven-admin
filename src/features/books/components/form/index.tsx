@@ -29,9 +29,7 @@ export const BookForm = ({ id, edit }: Props) => {
     const { bookValidations } = useBooksFormValidations();
     const { mutateAsync: createBook } = useCreateBook();
     const { mutateAsync: updateBook } = useUpdateBook();
-    const [uploadedFile, setUploadedFile] = useState<TUploadedFile | null>(
-        null
-    );
+    const [_, setUploadedFile] = useState<TUploadedFile | null>(null);
 
     useEffect(() => {
         eventEmitter.on(AppEvents.BOOKS_FORM_CLEAR, () => form.resetFields());
