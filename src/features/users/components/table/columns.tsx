@@ -20,11 +20,16 @@ export const useUsersTableColumns = () => {
             render: (_, user) =>
                 user.avatar ? (
                     <div>
-                        <Image src={user.avatar} />
+                        <Image
+                            width={40}
+                            height={40}
+                            className="rounded-full"
+                            src={user.avatar}
+                        />
                     </div>
                 ) : (
                     <div>
-                        <Avatar className="uppercase">
+                        <Avatar className="w-10! h-10! uppercase">
                             {user.username.slice(0, 1)}
                         </Avatar>
                     </div>
