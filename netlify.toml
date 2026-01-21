@@ -1,4 +1,24 @@
+[build]
+  publish = "dist"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Content-Type = "application/javascript"
+
+[[headers]]
+  for = "/*.mjs"
+  [headers.values]
+    Content-Type = "application/javascript"
+
+[[headers]]
+  for = "/*.wasm"
+  [headers.values]
+    Content-Type = "application/wasm"
+
+# SPA fallback (SAFE – does not break JS modules)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
